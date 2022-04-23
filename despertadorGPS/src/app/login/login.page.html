@@ -1,0 +1,45 @@
+<ion-grid class="background-image">
+
+    <img class="img-acceso"  (click)="seleccionarUsuario('admin@admin.com', '111111')"
+                  src="../../assets/Efecto1.png" alt="imagen admin"
+                  style="position: relative;top: 145px; left: 30px; width: 100px; height: 100px;">
+    <img class="img-acceso"  (click)="seleccionarUsuario('invitado@invitado.com', '222222')"
+                  src="../../assets/Efecto1.png" alt="imagen admin"
+                  style="position: relative;top: 200px; left: 55px; width: 100px; height: 100px;">
+    <img class="img-acceso"  (click)="seleccionarUsuario('tester@tester.com', '555555')"
+                  src="../../assets/Efecto1.png" alt="imagen admin"
+                  style="position: relative;top: 145px; left: 85px; width: 100px; height: 100px;">
+    <img class="img-acceso"  (click)="seleccionarUsuario('usuario@usuario.com', '333333')"
+                  src="../../assets/Efecto2.png" alt="imagen admin"
+                  style="position: relative;top: 200px; left: 20px; width: 100px; height: 100px;">
+    <img class="img-acceso"  (click)="seleccionarUsuario('anonimo@anonimo.com', '444444')"
+                  src="../../assets/Efecto2.png" alt="imagen admin"
+                  style="position: relative;top: 100px; left: 1px; width: 100px; height: 100px;">
+
+</ion-grid>
+<ion-content >
+    <ion-card color="primary">
+      <ion-card-content id="contenedorAccesoRapido">
+        <ion-grid>
+          <ion-row>
+            <h1 style="margin-left: 110px;">Iniciar Sesión</h1>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-content style="text-align: center;">
+        <ion-list class="listaInputs">
+          <ion-item class="inputLogin">
+            <ion-input class="inputMail" type="email" [(ngModel)]="user.email" placeholder="Correo"> </ion-input>
+          </ion-item>
+
+          <ion-item class="inputLogin">
+            <ion-input class="inputPassword" type="password" [(ngModel)]="user.password" placeholder="Contraseña"></ion-input>
+          </ion-item>
+
+        </ion-list>
+        <ion-button  (click)="onLogin()" >Entrar</ion-button>
+      </ion-card-content>
+    </ion-card>
+</ion-content>

@@ -1,0 +1,13 @@
+<ion-app>
+
+  <div id="superpuesto" [syle.display]="splash ? 'flex' : 'none'" *ngIf="splash">
+    <img id="imgUno" class="imagenes" src="../assets/icono/argentina.png">
+    <img id="imgDos" class="imagenes" src="../assets/icono/reino-unido.png">
+    <img id="imgTres" class="imagenes" src="../assets/icono/brasil.png">
+    <div id="splash"   src="../assets/icono/IconoAppIdiomas.png"></div>
+    <h1>Tabla de Idiomas</h1>
+    <h2>Franco Sagnella 4toA</h2>
+  </div>
+  
+  <ion-router-outlet></ion-router-outlet>
+</ion-app>

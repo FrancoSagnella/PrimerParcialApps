@@ -1,0 +1,27 @@
+<ion-menu side="start" contentId="main" menuId="first">
+  <ion-header class="header">
+    <ion-toolbar translucent>
+      <ion-title class="header-text">Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="menu-back">
+    <ion-list>
+      <ion-item (click)="onLogOut()">
+        <ion-icon name="exit" slot="start"></ion-icon>
+        <ion-label>Cerrar Sesión</ion-label>
+      </ion-item>
+      <ion-item (click)="redirectGalery()">
+        <ion-icon name="image" slot="start"></ion-icon>
+        <ion-label>Galería de fotos</ion-label>
+      </ion-item>
+      <ion-item (click)="redirectHome()">
+        <ion-icon name="camera" slot="start"></ion-icon>
+        <ion-label>Publicar una foto</ion-label>
+      </ion-item>
+      <ion-item (click)="redirectEstadisticas()">
+        <ion-icon name="medal" slot="start"></ion-icon>
+        <ion-label>Ver estadisticas</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>

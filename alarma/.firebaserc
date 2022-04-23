@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ppsclase1login": {
+      "hosting": {
+        "app": [
+          "ppsclase1login"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<ion-app>
+  <div id="superpuesto" [syle.display]="splash ? 'flex' : 'none'" *ngIf="splash">
+    <img id="imgUno" class="imagenes" src="../assets/Efecto1.png">
+    <img id="imgDos" class="imagenes" src="../assets/Efecto2.png">
+    <img id="imgTres" class="imagenes" src="../assets/Efecto3.png">
+    <img id="imgCuatro" class="imagenes" src="../assets/Efecto4.png">
+    <div id="splash"   src="../assets/iconoAppAlarma.png"></div>
+    <h1>Alarma Anti-Robos</h1>
+    <h2>Franco Sagnella 4toA</h2>
+  </div>
+
+  <ion-router-outlet></ion-router-outlet>
+</ion-app>

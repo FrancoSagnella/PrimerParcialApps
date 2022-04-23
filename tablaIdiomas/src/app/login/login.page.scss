@@ -1,0 +1,106 @@
+ion-item{
+  --color: black;
+}
+ion-button{
+  --background: #e1ecff;
+  color: black;
+}
+
+.img-qr{
+  height: 100px;
+  width: 100px;
+}
+
+#divUsuarios {
+  animation-duration: 3s;
+  .iconUser {
+    font-size: 300%;
+  }
+}
+.container1{
+  animation-name: rightIn;
+  animation-duration: 0.2s;
+}
+.container2{
+  animation-name: leftIn;
+  animation-duration: 0.2s;
+}
+.row:hover{
+  color: rgb(255, 240, 172);
+}
+//ANIMACIONES
+@keyframes rightIn {
+  from {
+    margin-left: 80%;
+  }
+  to {
+    margin-left: 0%;
+  }
+}
+@keyframes leftIn {
+  from {
+    margin-right: 80%;
+  }
+  to {
+    margin-right: 0%;
+  }
+}
+@keyframes rightInImg {
+  from {
+    position: absolute;
+    min-height: 223px;
+    left: 120%;
+  }
+  to {
+    position: absolute;
+    min-height: 223px;
+    left: 48.5%;
+  }
+}
+@keyframes leftInImg {
+  from {
+    position: absolute;
+    min-height: 223px;
+    left: -50%;
+  }
+  to {
+    position: absolute;
+    min-height: 223px;
+    left: 0%;
+  }
+}
+
+@keyframes zoom {
+  from {
+    max-width: 0%;
+    max-height: 0%;
+  }
+  to {
+    max-width: 100%;
+    max-height: 30%;
+  }
+}
+
+
+.icon-right{
+  text-align: right;
+}
+.icon-right{
+  text-align: left;
+}
+.mail{
+  text-align: center;
+}
+hr {
+  border: 1px solid black !important;
+  height: 1px !important;
+  width: 500px !important;
+  background: black !important;
+  display: block !important;
+  font-size: 2em !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+.selector:hover{
+  color: rgb(226, 102, 0);
+}

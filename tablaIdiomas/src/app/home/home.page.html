@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="warning">
+    <ion-title style="text-align: center;">
+      Recargas de Crédito
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" style="--ion-background-color: rgb(255, 240, 172); text-align: center">
+  <br><br><br><br><br><br><br>
+  <h1 style="font-size: 2.5rem;">Crédito acumulado:</h1>
+  <h3 style="font-size: 2.5rem;">${{this.getAcum()}}</h3>
+  <ion-button color="warning" (click)="scanCode()">Escanear código QR</ion-button><br>
+  <ion-button color="warning" (click)="retry()">Reiniciar créditos</ion-button>
+  <br><br><br><br>
+  <img class="img-qr" src="../../assets/qr.png" alt="">
+  <ion-fab vertical="top" horizontal="end" slot="fixed" (click)="onLogout()">
+    <ion-fab-button color="warning">
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

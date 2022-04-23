@@ -1,0 +1,11 @@
+{
+	"appId": "io.ionic.app1",
+	"appName": "relevamiento visual",
+	"webDir": "www",
+	"bundledWebRuntime": false,
+	"plugins": {
+		"SplashScreen": {
+			"launchAutoHide": false
+		}
+	}
+}

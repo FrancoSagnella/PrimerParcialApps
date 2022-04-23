@@ -1,0 +1,11 @@
+{
+	"appId": "io.ionic.tablaIdiomas",
+	"appName": "Tabla de Idiomas",
+	"webDir": "www",
+	"bundledWebRuntime": false,
+	"plugins": {
+		"SplashScreen": {
+			"launchAutoHide": false
+		}
+	}
+}

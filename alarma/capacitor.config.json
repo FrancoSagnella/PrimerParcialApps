@@ -1,0 +1,11 @@
+{
+	"appId": "io.ionic.alarma",
+	"appName": "alarma",
+	"webDir": "www",
+	"bundledWebRuntime": false,
+	"plugins": {
+		"SplashScreen": {
+			"launchAutoHide": false
+		}
+	}
+}

@@ -1,0 +1,71 @@
+<ion-content [fullscreen]="true" style="--ion-background-color: #208664c2;">
+    <!-- fab placed to the top start -->
+    <ion-fab vertical="top" horizontal="start" slot="fixed">
+      <ion-fab-button>
+        <ion-icon *ngIf="temaSeleccionado == 'numeros'" src="./assets/numeros.svg"></ion-icon>
+        <ion-icon *ngIf="temaSeleccionado == 'colores'" src="./assets/circulo-de-color.svg"></ion-icon>
+        <ion-icon *ngIf="temaSeleccionado == 'animales'" src="./assets/perro.svg"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-list side="end">
+        <ion-fab-button (click)="cambiarTema('numeros')"><ion-icon src="./assets/numeros.svg"></ion-icon></ion-fab-button>
+        <ion-fab-button (click)="cambiarTema('colores')"><ion-icon src="./assets/circulo-de-color.svg"></ion-icon></ion-fab-button>
+        <ion-fab-button (click)="cambiarTema('animales')"><ion-icon src="./assets/perro.svg"></ion-icon></ion-fab-button>
+      </ion-fab-list>
+    </ion-fab>
+
+      <!-- fab placed to the top end -->
+    <ion-fab vertical="top" horizontal="end" slot="fixed">
+      <ion-fab-button>
+        <ion-icon *ngIf="idiomaSeleccionado == 'español'" src="./assets/argentina.svg"></ion-icon>
+        <ion-icon *ngIf="idiomaSeleccionado == 'ingles'" src="./assets/estados-unidos-de-america.svg"></ion-icon>
+        <ion-icon *ngIf="idiomaSeleccionado == 'portugues'" src="./assets/brasil.svg"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-list side="start">
+        <ion-fab-button (click)="cambiarIdioma('español')"><ion-icon src="./assets/argentina.svg"></ion-icon></ion-fab-button>
+        <ion-fab-button (click)="cambiarIdioma('portugues')"><ion-icon src="./assets/brasil.svg"></ion-icon></ion-fab-button>
+        <ion-fab-button (click)="cambiarIdioma('ingles')"><ion-icon src="./assets/estados-unidos-de-america.svg"></ion-icon></ion-fab-button>
+      </ion-fab-list>
+    </ion-fab>
+
+    <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+      <ion-fab-button (click)="onLogout()">
+        <ion-icon name="log-out"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+    <ion-grid fixed class="contenedor" *ngIf="temaSeleccionado == 'numeros'">
+      <ion-row style="text-align: center;">
+        <ion-col size="12" text-center>
+            <div class="centrado">
+              <div *ngFor="let item of listaNumeros" class="boton-sonido" (click)="reproducirSonido(temaSeleccionado, idiomaSeleccionado, item.nombre)">
+                <img class="img-boton" [src]="item.foto" alt="">
+              </div>
+            </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid fixed class="contenedor" *ngIf="temaSeleccionado == 'colores'">
+      <ion-row style="text-align: center;">
+        <ion-col size="12" text-center>
+            <div class="centrado">
+              <div *ngFor="let item of listaColores" class="boton-sonido" (click)="reproducirSonido(temaSeleccionado, idiomaSeleccionado, item.nombre)">
+                <img class="img-boton"  [src]="item.foto" alt="">
+              </div>
+            </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid fixed class="contenedor" *ngIf="temaSeleccionado == 'animales'" >
+      <ion-row style="text-align: center;">
+        <ion-col size="12" text-center>
+            <div class="centrado">
+              <div *ngFor="let item of listaAnimales" class="boton-sonido" (click)="reproducirSonido(temaSeleccionado, idiomaSeleccionado, item.nombre)">
+                <img class="img-boton" [src]="item.foto" alt="">
+              </div>
+            </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-content>

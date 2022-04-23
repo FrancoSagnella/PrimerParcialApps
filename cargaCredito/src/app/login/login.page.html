@@ -1,0 +1,39 @@
+<ion-content text-center class="background-image">
+  <ion-grid>
+    <ion-row>
+      <ion-card-content class="card-content">
+        <ion-row>
+          <div class="centrado">
+            <h1>¡Bienvenido!</h1>
+          </div>
+          <ion-col size="12">
+            <ion-input type="email" [(ngModel)]="user.email" class="customInput" placeholder="Correo">
+              <ion-icon class="iconos" name="mail"></ion-icon>
+            </ion-input>
+          </ion-col>
+          <ion-col size="12">
+            <ion-input type="password" [(ngModel)]="user.password" class="customInput" placeholder="Clave">
+              <ion-icon class="iconos" name="key"></ion-icon>
+            </ion-input>
+          </ion-col>
+          <ion-col size="8" offset="2">
+            <ion-button class="customButton" expand="block" id="btn-Login" (click)="onLogin()">
+              Iniciar Sesión<ion-icon name="log-in"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+        
+        <ion-row>
+          <ion-col size="12" text-center>
+              <div class="centrado">
+                <div *ngFor="let usuario of listaUsuarios" class="divPerfil">
+                  <img class="imagenUsuario" (click)=seleccionarUsuario(usuario) [src]="elegirFoto(usuario)" alt="">
+                </div>
+              </div>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+  

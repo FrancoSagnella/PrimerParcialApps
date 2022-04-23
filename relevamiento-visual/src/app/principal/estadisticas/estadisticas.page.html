@@ -1,0 +1,54 @@
+<ion-header [translucent]="true" class="header">
+  <ion-toolbar>
+    <ion-buttons slot="start" >
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="header-text">
+      Estadísticas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-grid class="galeria-Linda" (click)="verGraficoLindas()" *ngIf="categoria == ''">
+</ion-grid>
+<ion-grid class="galeria-fea" (click)="verGraficoFeas()" *ngIf="categoria == ''">
+</ion-grid>
+
+<ion-content *ngIf="categoria == 'lindas' && !imagenSeleccionada" style="--ion-background-color:  rgb(219, 219, 248);">
+  <ion-fab vertical="top" horizontal="end" slot="fixed" *ngIf="categoria != ''" (click)="volver()" color="tertiary">
+    <ion-fab-button color="tertiary">
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <div style="text-align: center;"><h1>Las fotos mas votadas</h1></div>
+  <p-chart type="pie" width="400" height="400" [data]="dataCosasLindas" (onDataSelect)="selectData($event)"></p-chart>
+</ion-content>
+
+
+<ion-content *ngIf="categoria == 'feas' && !imagenSeleccionada" style="--ion-background-color:  rgb(219, 219, 248);">
+  <ion-fab vertical="top" horizontal="end" slot="fixed" *ngIf="categoria != ''" (click)="volver()" color="tertiary">
+    <ion-fab-button color="tertiary">
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <div style="text-align: center;"><h1>Las fotos mas votadas</h1></div>
+  <p-chart type="bar" width="400" height="400" [data]="dataCosasFeas" (onDataSelect)="selectData($event)"></p-chart>
+</ion-content>
+
+<ion-card id="imgSeleccionada" *ngIf="imgSeleccionada">
+  <ion-card-header>
+      <ion-icon class="back" name="arrow-undo-outline" (click)="deseleccionarImagen()"></ion-icon>
+      <ion-title>
+          Autor: {{imgSeleccionada.usuario}}
+      </ion-title>
+  </ion-card-header>
+  <ion-card-content>
+      <img src="{{imgSeleccionada.link}}" alt="imagen seleccionada">
+      <p>
+          Fecha: {{imgSeleccionada.fecha | date : 'short'}}
+      </p>
+      <p>
+          Clasificacion: {{imgSeleccionada.tipo}}
+      </p>
+  </ion-card-content>
+</ion-card>

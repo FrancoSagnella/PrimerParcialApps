@@ -1,0 +1,156 @@
+#imgCasas{
+    position: absolute;
+    top: 60% ;
+    width: 400px;
+    height: 250px;
+  }
+  h1{
+    position: absolute;
+    top: 10%;
+    right: 25%;
+    color: white;
+    z-index: 10;
+    animation-name: entrarDerecha;
+    animation-duration: 1s;
+    animation-delay: 2.5s;
+  }
+  h2{
+    position: absolute;
+    top: 80%;
+    right: 22%;
+    color: white;
+    z-index: 10;
+    animation-name: entrarIzquierda;
+    animation-duration: 1s;
+    animation-delay: 2.5s;
+  }
+  @keyframes entrarDerecha {
+    from{
+      right: 100%;
+    }
+    to{
+      right: 28%;
+    }
+  }
+  @keyframes entrarIzquierda {
+    from{
+        visibility: visible;
+
+      right: -100%;
+    }
+    to{
+      right: 24%;
+    }
+  }
+  .imagenes{
+    position: absolute;
+    width: 400px;
+    // visibility: hidden;
+    animation-duration: 5s;
+    animation-delay: 2.5;
+  }
+  #imgUno{
+  width: 70px;
+  top: 23.5%;
+  right: 49.3%;
+  animation-name: entraImgUno;
+  animation-delay: 3s;
+  visibility: hidden;
+
+  }
+  #imgDos{
+  top: 20%;
+  right: 52.2%;
+  width: 100px;
+  animation-name: entraImgDos;
+  animation-delay: 4s;
+  visibility: hidden;
+
+  }
+  #imgTres{
+  top: 21%;
+  right: 27.5%;
+  width: 100px;
+  animation-name: entraImgTres;
+  animation-delay: 3s;
+  visibility: hidden;
+
+  }
+  #imgCuatro{
+    top: 19.8%;
+    right: 20.6%;
+    width: 100px;
+    animation-name: entraImgCuatro;
+    animation-delay: 4s;
+    visibility: hidden;
+
+    }
+  @keyframes entraImgUno{
+    from{
+        visibility: hidden;
+  }
+  to{
+      visibility: visible;
+  }
+  }
+  @keyframes entraImgDos{
+    from{
+        visibility: hidden;
+  }
+  to{
+      visibility: visible;
+  }
+  }
+  @keyframes entraImgTres{
+    from{
+        visibility: hidden;
+  }
+  to{
+      visibility: visible;
+  }
+  }
+  @keyframes entraImgCuatro{
+    from{
+        visibility: hidden;
+  }
+  to{
+      visibility: visible;
+  }
+  }
+    #superpuesto{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;;
+        z-index: 9999;
+        width: 100%;
+        background-color: #242424;
+        animation-name: ocultar;
+        animation-duration: 8s;
+        animation-delay: 2.5;
+    }
+
+    @keyframes ocultar{
+      from{
+        opacity: 1;
+        visibility: visible;
+      }
+      80%{
+        opacity: 1;
+        visibility: visible;
+      }
+      to{ 
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    #splash{
+        --background:none;
+        background: url("../assets/iconoAppAlarma.png") no-repeat center /cover;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }

@@ -1,0 +1,44 @@
+<ion-content style="--ion-background-color:  rgb(219, 219, 248);">
+  <ion-card class="container1" color="light">
+    <ion-card-header class="centrado" color="tertiary" [translucent]="true">
+      <ion-card-title>
+        <h1 style="color: white;">Iniciar Sesión</h1>
+      </ion-card-title>
+    </ion-card-header>
+  <ion-card-content >
+      
+      <form class="centrado">
+        <ion-item color="none">
+          <ion-input class="centrado" type="email" placeholder="Ingrese su correo" [(ngModel)]="user.email" name="email" required ></ion-input>
+        </ion-item>
+        <ion-item color="none">
+          <ion-input class="centrado" type="password" placeholder="Ingrese su contraseña" [(ngModel)]="user.password" name="password" required ></ion-input> 
+        </ion-item>
+        <ion-button style="margin-top: 2rem;" color="tertiary" expand="full" shape="round" type="submit"(click)="onLogin()"block>Ingresar</ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="container2" color="light">
+    <ion-card-header class="centrado" color="tertiary" [translucent]="true">
+      <ion-card-title>
+        <h1 style="color: white;">Inicio Rápido</h1>
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-item id="divUsuarios" class="centrado" color="none" lines="none">
+      <ion-grid>
+        <ion-row class="row" *ngFor="let usuarios of listaUsuarios" (click)="seleccionarUsuario(usuarios)"> 
+          <ion-col>
+            <ion-icon class="iconUser" name="person"></ion-icon>
+          </ion-col>
+          <ion-col>
+            <h1>{{usuarios.email}}</h1>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+  </ion-item>
+  </ion-card>
+</ion-content>
+  
+

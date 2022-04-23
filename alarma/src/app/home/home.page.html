@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title>
+      Alarma de robos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- <ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Alarma</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <strong>Pagina principal de Alarma de robos</strong><br>
+    <ion-button color="danger" (click)="onLogOut()">Cerrar Sesión</ion-button>
+  </div>
+</ion-content> -->
+
+<ion-content style="text-align: center; --ion-background-color: black;" *ngIf="!pedirPassword">
+
+  <img style="margin-top: 50px;" [src]="fotoAlarma" width="200px" height="200px"/><br>
+  <img style="margin-top: 50px;" (click)="encender()" id="img" [src]="fotoBoton" width="200px" height="100px"/>
+
+</ion-content>
+
+<ion-content style="text-align: center; --ion-background-color: black;" *ngIf="pedirPassword">
+
+  <ion-card>
+    <ion-input type="password" [(ngModel)]="passwordEscrita" required></ion-input>
+    <ion-button color="danger" id="btn-logout" expand="full" shape="round" type="submit" (click)="confirmar()" block>Apagar la alarma
+    </ion-button>
+    <ion-button color="danger" id="btn-logout" expand="full" shape="round" type="submit" (click)="cancelar()" block>Cancelar
+    </ion-button>
+  </ion-card>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="dark">
+    <ion-button color="danger" id="btn-logout" expand="full" shape="round" type="submit" (click)="onLogout()" block>Cerrar sesión
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

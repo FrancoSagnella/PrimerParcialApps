@@ -1,0 +1,11 @@
+{
+	"appId": "io.ionic.chat",
+	"appName": "despertadorGPS",
+	"webDir": "www",
+	"bundledWebRuntime": false,
+  "plugins": {
+		"SplashScreen": {
+			"launchAutoHide": false
+		}
+	}
+}

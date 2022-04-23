@@ -1,0 +1,48 @@
+<ion-header [translucent]="true" class="header">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="header-text">
+      Galeria de fotos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-grid class="galeria-Linda" (click)="verListaLindas()" *ngIf="categoria == ''">
+</ion-grid>
+<ion-grid class="galeria-fea" (click)="verListaFeas()" *ngIf="categoria == ''">
+</ion-grid>
+
+<ion-content *ngIf="categoria == 'lindas'" style="--ion-background-color:  rgb(219, 219, 248);">
+  <ion-fab vertical="top" horizontal="end" slot="fixed" *ngIf="categoria != ''" (click)="volver()" color="tertiary">
+    <ion-fab-button color="tertiary">
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+    <ion-card *ngFor="let imagen of listaLindo" class="img-card">
+      <h3 class="header-text" style="margin-left: 20px;"> Autor: {{imagen.usuario}}</h3>
+      <p class="header-text" style="margin-left: 20px;">{{imagen.fecha}}</p>
+      <p class="header-text" style="margin-left: 20px;">{{imagen.votos}} VOTOS</p>
+      <img class="img-galeria" [src]="imagen.link" alt="imagen tomada" height="600px" width="500px">
+      <ion-button (click)="votar(imagen)" expand="full" color="success">Votar como mas lindo</ion-button>
+    </ion-card>
+  </ion-content>
+
+
+  <ion-content *ngIf="categoria == 'feas'" style="--ion-background-color:  rgb(219, 219, 248);">
+    <ion-fab vertical="top" horizontal="end" slot="fixed" *ngIf="categoria != ''" (click)="volver()">
+      <ion-fab-button color="tertiary">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+    <ion-card *ngFor="let imagen of listaFeo" class="img-card">
+      <h3 class="header-text" style="margin-left: 20px;"> Autor: {{imagen.usuario}}</h3>
+      <p class="header-text" style="margin-left: 20px;">{{imagen.fecha}}</p>
+      <p class="header-text" style="margin-left: 20px;">{{imagen.votos}} VOTOS</p>
+      <img class="img-galeria" [src]="imagen.link" alt="imagen tomada" height="600px" width="500px">
+      <ion-button (click)="votar(imagen)" expand="full" color="danger">Votar como mas feo</ion-button>
+    </ion-card>
+  </ion-content>
+

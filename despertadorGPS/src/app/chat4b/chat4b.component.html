@@ -1,0 +1,54 @@
+<ion-fab vertical="top" horizontal="start" slot="fixed" (click)="logOut()" color="primary">
+  <ion-fab-button color="primary">
+    <ion-icon name="log-out"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+<ion-fab vertical="top" horizontal="end" slot="fixed" (click)="volver()" color="primary">
+  <ion-fab-button color="primary">
+    <ion-icon name="arrow-back"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+<ion-header [translucent]="true" style="--ion-background-color: #44d3e6">
+  <ion-toolbar style="text-align: center;">
+    <ion-title>Aula de 4-B</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<div style="background-color: #44d3e6; padding-top: 18px; padding-bottom: 17px;">
+  <div class="scroll" #scrollMe>
+      <div *ngFor="let mensaje of chat">
+
+        <div *ngIf="mensaje.data.from != this.user.email">
+          <div class="" style="text-align: left;font-size: 20px; margin-left: 10px;">
+            <span style="font-size: 15px;color: #00ff22">{{mensaje.data.from}}</span>
+            <br>
+              {{mensaje.data.message}}
+            <br>
+
+              <span class="" style="font-size: 10px;">{{mensaje.data.date}} {{mensaje.data.time}}</span>
+
+          </div>
+        </div>
+
+        <div *ngIf="mensaje.data.from == this.user.email">
+          <div class="" style="text-align: right;font-size: 20px; margin-right: 10px;">
+
+              <span>{{mensaje.data.message}}</span>
+              <br>
+              <span class="" style="font-size: 10px;">{{mensaje.data.date}} {{mensaje.data.time}}</span>
+
+          </div>
+        </div>
+
+        <hr>
+      </div>
+    </div>
+  </div>
+
+<ion-footer style="--ion-background-color: #44d3e6">
+  <ion-input placeholder="Escribí acá" [(ngModel)]="this.mensaje.message" ></ion-input>
+  <ion-icon type="submit" (click)="send()" name="send" id="sendButton"></ion-icon>
+</ion-footer>

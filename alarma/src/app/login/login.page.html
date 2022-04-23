@@ -1,0 +1,42 @@
+<ion-content style="--ion-background-color: black;">
+  <ion-card class="container1" color="dark">
+  <!-- <ion-card class="container1" color=""> -->
+    <ion-card-header color="danger">
+      <ion-card-title>
+        <h1 style="color: white;">Iniciar Sesión</h1>
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content >
+      <form>
+        <ion-item lines="full" color="dark">
+        <!-- <ion-item lines="full" color=""> -->
+          <ion-label position="floating" >Correo</ion-label>
+          <ion-input type="text" [(ngModel)]="user.email" name="email" required></ion-input>
+        </ion-item>
+        <ion-item lines="full" color="dark">
+        <!-- <ion-item lines="full" color=""> -->
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input type="password" [(ngModel)]="user.password" name="password" required></ion-input>
+        </ion-item>
+        <div style="text-align: center; margin-top: 2rem;">
+          <ion-button color="danger" type="submit"(click)="onLogin()"block>Ingresar</ion-button>
+        </div>
+      </form>
+    </ion-card-content>
+
+  </ion-card>
+    <ion-card color="dark" id="mailsContainer" style="display: none;">
+      <ion-item id="divUsuarios" class="centrado" color="none" lines="none">
+        <ion-grid>
+            <ion-button *ngFor="let usuarios of listaUsuarios" color="danger" expand="block" size="large" (click)="seleccionarUsuario(usuarios)">
+              {{usuarios.email}}
+            </ion-button>
+        </ion-grid>
+      </ion-item>
+    </ion-card>
+
+  <ion-button color="danger" expand="block" size="large" (click)="mostrarMails()"><ion-icon id="flecha" name="arrow-down"></ion-icon></ion-button>
+
+  <img id="icono" src="../../assets/Sin nombre.png">
+
+</ion-content>
